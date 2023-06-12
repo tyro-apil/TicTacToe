@@ -3,10 +3,6 @@
 #ifndef _UI_HPP
 #define _UI_HPP
 
-enum class player { playerA,
-                    playerB
-                    };
-
 enum class grid { empty = 0,
                   gap,
                   playerA,
