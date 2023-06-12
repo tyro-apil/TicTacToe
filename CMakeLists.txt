@@ -6,4 +6,4 @@ set(SOURCES
 	src/main.cpp
 )
 
-add_executable(${PROJECT} ${SOURCES})
+add_executable(${PROJECT_NAMEQ} ${SOURCES})
