@@ -17,9 +17,9 @@ class board
         int turn_count;
         
     public:
-        board(): elements({grid::empty, grid::gap, grid::empty, grid::gap, grid::empty},
+        board(): elements({{grid::empty, grid::gap, grid::empty, grid::gap, grid::empty},
                           {grid::empty, grid::gap, grid::empty, grid::gap, grid::empty},
-                          {grid::empty, grid::gap, grid::empty, grid::gap, grid::empty}),
+                          {grid::empty, grid::gap, grid::empty, grid::gap, grid::empty}}),
                  winner(grid::empty),
                  playerA_mark('O'), playerB_mark('X'), empty_mark('_'), gap_mark(' '),
                  turn_count(0){ }//Constructor
