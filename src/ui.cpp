@@ -51,10 +51,10 @@ void board::set_mark(grid player)
     int row;
     if(mark%3)
     {
-        row = row/3;
+        row = mark/3;
     }
     else{
-        row = row/3 - 1;
+        row = mark/3 - 1;
     }
     int col = col_index[mark%3];
     elements[row][col] = player;
@@ -121,7 +121,7 @@ bool board::check_col(grid player)
 
 bool board::check_win(grid player)
 {
-    return (board::check_col(player) && board::check_row(player) && board::check_diagonal(player));
+    return (check_col(player) || check_row(player) || check_diagonal(player));
 }
 
 void board::display_win(grid player, bool win)
@@ -129,6 +129,7 @@ void board::display_win(grid player, bool win)
     turn_count ++;
     if(win)
     {
+        winner = player;
         if(player == grid::playerA)
         {
             std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
@@ -138,5 +139,4 @@ void board::display_win(grid player, bool win)
             std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
         }
     }
-    return;
 }
