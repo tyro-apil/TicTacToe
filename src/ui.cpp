@@ -106,3 +106,19 @@ bool board::check_win(grid player)
 {
     return (board::check_col(player) && board::check_row(player) && board::check_diagonal(player));
 }
+
+void board::display_win(grid player, bool win)
+{
+    if(win)
+    {
+        if(player == grid::playerA)
+        {
+            std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
+        }
+        else
+        {
+            std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
+        }
+    }
+    return;
+}
