@@ -101,10 +101,10 @@ bool board::check_row(grid player)
 bool board::check_col(grid player)
 {
     bool col_match;
-    for(int row=0; row<3; row++)
+    for(int col=0; col<5; col+=2)
     {
         col_match = true;
-        for(int col=0; col<5; col+=2)
+        for(int row=0; row<3; row++)
         {
             if(elements[row][col] != player)
             {

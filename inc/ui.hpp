@@ -33,8 +33,8 @@ class board
         bool check_diagonal(grid);
         bool check_row(grid);
         bool check_col(grid);
-        bool check_win(grid);               //Check all conditions for win
-        void display_win(grid, bool);       //Check win for prompt player
+        void check_win(grid);               //Check all conditions for win
+        void display_win(grid);       //Check win for prompt player
 };
 
 #endif  //_GRID_HPP
