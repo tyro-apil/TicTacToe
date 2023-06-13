@@ -36,11 +36,11 @@ grid board::prompt()
     std::cout<<"Turn goes to : ";
     if(!(turn_count%2))
     {
-        std::cout<<"Player A"<<std::endl;
-        return grid::playerA;
+        std::cout<<"Player B"<<std::endl;
+        return grid::playerB;
     }
-    std::cout<<"Player B"<<std::endl;
-    return grid::playerB;
+    std::cout<<"Player A"<<std::endl;
+    return grid::playerA;
 }
 
 void board::set_mark(grid player)
@@ -119,24 +119,25 @@ bool board::check_col(grid player)
     return false;
 }
 
-bool board::check_win(grid player)
+void board::check_win(grid player)
 {
-    return (check_col(player) || check_row(player) || check_diagonal(player));
-}
-
-void board::display_win(grid player, bool win)
-{
-    turn_count ++;
+    bool win = (check_col(player) || check_row(player) || check_diagonal(player));
     if(win)
     {
         winner = player;
-        if(player == grid::playerA)
-        {
-            std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
-        }
-        else
-        {
-            std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
-        }
+        display_grid();
+        display_win(player);
+    }
+}
+
+void board::display_win(grid player)
+{
+    if(player == grid::playerA)
+    {
+        std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
     }
 }
