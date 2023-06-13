@@ -14,14 +14,13 @@ class board
 {
     private:
         grid elements[3][5];
-        grid winner;
         char playerA_mark, playerB_mark, empty_mark, gap_mark;
-        
         int col_index[3] = {4, 0, 2};
         
         
     public:
         static int turn_count;
+        grid winner;
         board(): elements({{grid::empty, grid::gap, grid::empty, grid::gap, grid::empty},
                           {grid::empty, grid::gap, grid::empty, grid::gap, grid::empty},
                           {grid::empty, grid::gap, grid::empty, grid::gap, grid::empty}}),
