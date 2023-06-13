@@ -17,6 +17,8 @@ class board
         grid winner;
         char playerA_mark, playerB_mark, empty_mark, gap_mark;
         static int turn_count;
+        int col_index[3] = {0, 2, 4};
+        
         
     public:
         board(): elements({{grid::empty, grid::gap, grid::empty, grid::gap, grid::empty},
@@ -26,11 +28,12 @@ class board
                  playerA_mark('O'), playerB_mark('X'), empty_mark('_'), gap_mark(' ')
                  { }//Constructor
         void display_grid();
-        grid prompt(int);                   //Whose turn
+        grid prompt();                   //Whose turn
+        void set_mark(grid);
         bool check_diagonal(grid);
         bool check_row(grid);
         bool check_col(grid);
-        bool check_win(bool);               //Check all conditions for win
+        bool check_win(grid);               //Check all conditions for win
         void display_win(grid, bool);       //Check win for prompt player
 };
 
