@@ -43,6 +43,23 @@ grid board::prompt()
     return grid::playerB;
 }
 
+void board::set_mark(grid player)
+{
+    int mark;
+    std::cout<<"Type your choice (1-9): ";
+    std::cin>>mark;
+    int row;
+    if(mark%3)
+    {
+        row = row/3;
+    }
+    else{
+        row = row/3 - 1;
+    }
+    int col = col_index[mark%3];
+    elements[row][col] = player;
+}
+
 bool board::check_diagonal(grid player)
 {   
     bool diagonal=true, antidiagonal=true;
@@ -109,6 +126,7 @@ bool board::check_win(grid player)
 
 void board::display_win(grid player, bool win)
 {
+    turn_count ++;
     if(win)
     {
         if(player == grid::playerA)
