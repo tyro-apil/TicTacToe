@@ -1,4 +1,4 @@
-#include "ui.hpp"
+#include "../inc/ui.hpp"
 
 void board::display_grid()
 {
@@ -45,9 +45,29 @@ grid board::prompt()
 
 void board::set_mark(grid player)
 {
+    Entry:
     int mark;
     std::cout<<"Type your choice (1-9): ";
     std::cin>>mark;
+
+    // range checking
+    if (mark < 1 || mark>9)
+    {
+        std::cout << "Invalid entry<" << std::endl;
+        goto Entry;
+    }
+
+
+    // occupied checking
+    if (vec[mark] != 0)
+    {
+        std::cout << "OCCUPIED" << std::endl;
+        goto Entry;
+    }
+    vec[mark] = 1;
+   
+  
+  
     int row;
     if(mark%3)
     {
@@ -135,9 +155,11 @@ void board::display_win(grid player)
     if(player == grid::playerA)
     {
         std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
+        system("pause>nul");
     }
     else
     {
         std::cout<<"!!! SHOUT OUT TO PLAYER A FOR THE WIN !!!!"<<std::endl;
+        system("pause>nul");
     }
 }
