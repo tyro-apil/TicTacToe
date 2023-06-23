@@ -1,6 +1,7 @@
-//main function for cpp project
+//main function for cpp project //haha change++
 
-#include "ui.hpp"
+
+#include "../inc/ui.hpp"
 
 int board::turn_count = 0;
 int main()
@@ -25,5 +26,6 @@ int main()
     
     }
     std::cout<<"### Game ends in TIE ###"<<std::endl;
+    system("pause>nul");
     return 0;
 }
